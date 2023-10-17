@@ -1,0 +1,63 @@
+:root {
+    --white: linear-gradiente(white, white);
+    --gradient: linear-gradient(180deg, #ffffb1 0, #ffeca7 25%, #f2d59d 50%, #dcbf93 75%, #c7ac8a 100%);
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    widht: 100vw;
+    height: 100vh;
+    background: white;
+    gap: 20px;
+    wrap: wrap;
+}
+
+.btn1 {
+    --border-width: 2px;
+    --border-radius: 5px;
+    font: inherit;
+    background: var(--gradient);
+    border: 0;
+    padding: 1rem 2rem;
+    position: relative;
+    border-radius: var(--border-radius);
+    z-index: 1;
+}
+
+.btn1::before {
+    content: '';
+    display: block;
+    height: calc(100% - calc(var(--border-width) * 2));
+    width: calc(100% - calc(var(--border-width) * 2));
+    background: white;
+    position: absolute;
+    top: var(--border-width);
+    left: var(--border-width);
+    border-radius: calc(var(--border-radius) - var(--border-width));
+    z-index: -1;
+}
+
+.btn2 {
+    width: 100px;
+    height: 20px;
+    padding: 0;
+    border-radius: 5px;
+    border: solid 1px transparent;
+    background-image: linear-gradient(white, white),
+    linear-gradient(90deg, #833AB4, #FD1D1D, #FCB045);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+
+.btn2:hover {
+    background-image: linear-gradient(90deg, #833AB4, #FD1D1D, #FCB045);
+    color: #FFF;
+}
